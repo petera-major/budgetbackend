@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const axios = require("axios");
-const OpenAI = require('openai');
 
 dotenv.config();
 const app = express();
