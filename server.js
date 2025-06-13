@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const axios = require("axios");
-const { Configuration, OpenAIApi } = require('openai');
+const OpenAI = require('openai');
 
 dotenv.config();
 const app = express();
@@ -41,10 +41,11 @@ app.get('/api/stocks/:symbol', async (req, res) => {
     ]);
   });
   
-  const configuration = new Configuration({
+  const OpenAI = require("openai");
+
+    const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
-  });
-  const openai = new OpenAIApi(configuration);
+    });
   
   app.post('/api/ai', express.json(), async (req, res) => {
     const { message } = req.body;
